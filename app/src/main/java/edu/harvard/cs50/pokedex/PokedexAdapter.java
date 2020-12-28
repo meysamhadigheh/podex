@@ -11,7 +11,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
 import android.widget.Filterable;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -34,13 +36,15 @@ import java.util.List;
 public class PokedexAdapter extends RecyclerView.Adapter<PokedexAdapter.PokedexViewHolder>
         implements Filterable {
     public static class PokedexViewHolder extends RecyclerView.ViewHolder {
-        private LinearLayout containerView;
+        private RelativeLayout containerView;
         private TextView textView;
+        private ImageView imgView;
 
         PokedexViewHolder(View view) {
             super(view);
             containerView = view.findViewById(R.id.pokedex_row);
             textView = view.findViewById(R.id.pokedex_row_text_view);
+            imgView=view.findViewById(R.id.pokedex_row_image_view);
 
             containerView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -144,9 +148,13 @@ public class PokedexAdapter extends RecyclerView.Adapter<PokedexAdapter.PokedexV
 
         holder.textView.setText(current.getName());
         if (preferences.contains(current.getName())) {
-            holder.textView.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.pokeball, 0);
+            //holder.textView.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_pokemon, 0);
+
+            holder.imgView.setVisibility(View.VISIBLE);
         } else {
-            holder.textView.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
+            //holder.textView.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
+            holder.imgView.setVisibility(View.GONE);
+
         }
         holder.containerView.setTag(current);  // Can be anything to provide access from holder
     }
