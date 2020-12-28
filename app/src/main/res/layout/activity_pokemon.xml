@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#000"
     tools:context=".PokemonActivity">
     <Button
         android:id="@+id/catch_button"
@@ -13,45 +14,78 @@
         android:onClick="toggleCatch"
         android:text="@string/catch_button_name" />
 
-    <ImageView
-        android:id="@+id/pokemon_sprite"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:contentDescription="@+id/pokemon_name" />
 
-    <TextView
-        android:id="@+id/pokemon_number"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="5sp"
-        android:textAlignment="center"
-        android:textSize="12sp" />
 
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/pokemon_name"
-        android:textAlignment="center"
-        android:paddingTop="10sp"
-        android:textSize="18sp" />
+        android:background="#000">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/pokemon_type_1"
-        android:visibility="gone"
-        android:textAlignment="center"
-        android:paddingTop="5sp"
-        android:textSize="16sp" />
+        <ImageView
+            android:id="@+id/pokemon_sprite"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_alignParentRight="true"
+            android:contentDescription="@+id/pokemon_name" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/pokemon_type_2"
-        android:visibility="gone"
-        android:textAlignment="center"
-        android:paddingTop="5sp"
-        android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:paddingTop="16dp"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/pokemon_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/alex_brush"
+                android:textStyle="bold"
+                android:paddingTop="5sp"
+                android:gravity="left"
+                android:textSize="16sp"
+                android:textColor="#fff"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/pokemon_name"
+                android:gravity="left"
+                android:paddingTop="10sp"
+                android:textSize="18sp"
+                android:textColor="#fff"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/pokemon_type_1"
+                android:gravity="left"
+                android:visibility="gone"
+                android:paddingTop="5sp"
+                android:textSize="16sp"
+                android:textColor="#fff"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:id="@+id/pokemon_type_2"
+                android:visibility="gone"
+                android:paddingTop="5sp"
+                android:textSize="16sp"
+                android:textColor="#fff"/>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+
+
+
 
     <TextView
         android:id="@+id/pokemon_description"
@@ -60,7 +94,8 @@
         android:maxWidth="40sp"
         android:paddingTop="15sp"
         android:textAlignment="center"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:textColor="#fff"/>
 
 
 

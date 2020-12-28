@@ -106,7 +106,7 @@ public class PokemonActivity extends AppCompatActivity {
             }
             nameTextView.setText(name);
             setCaught();
-            numberTextView.setText(String.format(Locale.getDefault(), "#%03d", response.getInt("id")));
+            numberTextView.setText("number: "+String.format(Locale.getDefault(), "#%03d", response.getInt("id")));
 
 
             for (int i = 0; i < typeEntries.length(); i++) {
@@ -115,10 +115,10 @@ public class PokemonActivity extends AppCompatActivity {
                 String type = Util.capitalize(typeEntry.getJSONObject("type").getString("name"));
 
                 if (slot == 1) {
-                    type1TextView.setText(type);
+                    type1TextView.setText("type1: "+type);
                     type1TextView.setVisibility(View.VISIBLE);
                 } else if (slot == 2) {
-                    type2TextView.setText(type);
+                    type2TextView.setText("type2: "+type);
                     type2TextView.setVisibility(View.VISIBLE);
                 }
             }
